@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler'
 import React from 'react';
-import { ListScreen } from './src/screens'
+import Navigation from './src/navigation'
 
-const App = () => <ListScreen />
+const App = () => <Navigation />
 
 export default App
