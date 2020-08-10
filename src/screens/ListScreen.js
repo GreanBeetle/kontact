@@ -7,12 +7,13 @@ const ListScreen = ({ navigation }) => {
     <SafeAreaView style={STYLES.container}>
       <View style={STYLES.standard}>
         <Text>
-          List Screen
+          List Screen 
+          {/* CHANGE THIS TEXT! */}
         </Text>
       </View>
 
       {/* TEMPORARY BUTTON CODE */}
-      <TouchableOpacity onPress={() => navigation.push('Kontact')}>
+      <TouchableOpacity onPress={() => navigation.push('Kontact')} style={STYLES.standard}>
         <View style={STYLES.button}>
           <Text style={STYLES.buttonText}>GO</Text>
         </View>
