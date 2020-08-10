@@ -2,7 +2,8 @@
 ## kontact 
 
 [![Generic badge](https://img.shields.io/badge/license-MIT-<COLOR>.svg)](https://shields.io/)
-[![react](https://img.shields.io/static/v1?label=&message=React-Native&color=blue?style=plastic&logo=react)](https://shields.io/)
+[![React](https://img.shields.io/static/v1?label=&message=React-Native&color=blue?style=plastic&logo=react)](https://shields.io/)
+[![](https://img.shields.io/static/v1?&message=JavaScript&color=<COLOR>?style=plastic&logo=JavaScript?color=#F7DF1E)](https://shields.io)
 
 javascript + react native version number + redux 
 
