@@ -4,11 +4,14 @@ import { GLOBAL_STYLES as STYLES } from '../styles'
 import { connect } from 'react-redux'
 import { getKontacts } from '../redux/actions'
 
-const KontactListScreen = ({ navigation }) => {
-  
+const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getKontacts }) => {
+  console.log('isGetting', isGetting) // REMOVE
+  console.log('errorMessage', errorMessage) // REMOVE
+  console.log('kontacts', kontacts) // REMOVE 
+
   useEffect(() => {
     console.log('component did mount')
-    // add getKontacts call here 
+    getKontacts() 
   }, [])
   
   return (
@@ -33,7 +36,7 @@ const KontactListScreen = ({ navigation }) => {
 }
 
 function mapStateToProps(state) {
-  const { isGetting, errorMessage, kontacts } = state 
+  const { isGetting, errorMessage, kontacts } = state.getKontacts 
   return { isGetting, errorMessage, kontacts }
 }
 
