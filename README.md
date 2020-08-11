@@ -22,7 +22,7 @@ John Rykken
 
 _john.rykken@gmail.com_
 
-Copyright (c) 2020 John RYkken
+Copyright (c) 2020 John Rykken
  
 
 
