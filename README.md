@@ -4,7 +4,7 @@
 [![Generic badge](https://img.shields.io/badge/license-MIT-green.svg?style=plastic)](https://shields.io/)
 ![GitHub last commit](https://img.shields.io/github/last-commit/GreanBeetle/kontact?style=plastic)
 [![Generic badge](https://img.shields.io/badge/build-passing-brightgreen.svg?style=plastic)](https://shields.io/)
-[![React Native](https://img.shields.io/static/v1?label=' '&message=React-Native-0.63&color=#61dafb?style=plastic&logo=react)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/default-badge-green.svg?logo=react&style=plastic&color=#61DAFB&label=' ')](https://shields.io/)
 
 
 
