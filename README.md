@@ -5,6 +5,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/GreanBeetle/kontact?style=plastic)
 [![Generic badge](https://img.shields.io/badge/build-passing-brightgreen.svg?style=plastic)](https://shields.io/)
 ![React Native](https://img.shields.io/static/v1?message=React-Native-0.63&color=61dafb)
+![React Native](https://img.shields.io/static/v1?message=React-Native-0.63&color=61dafb&logo=react&label=)
 
 
 
