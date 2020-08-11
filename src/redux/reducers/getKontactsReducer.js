@@ -1,7 +1,7 @@
 import {
-  GET_KONTACT_REQUEST,
-  GET_KONTACT_SUCCESS,
-  GET_KONTACT_FAILURE
+  GET_KONTACTS_REQUEST,
+  GET_KONTACTS_SUCCESS,
+  GET_KONTACTS_FAILURE
 } from '../actions/types'
 
 const initialState = {
@@ -10,17 +10,17 @@ const initialState = {
   kontacts: []
 }
 
-const getKontactReducer = (state = initialState, action) => {
+const getKontactsReducer = (state = initialState, action) => {
   switch(action.type) {
-    case GET_KONTACT_REQUEST:
+    case GET_KONTACTS_REQUEST:
       return { ...state, isGetting: true }
-    case GET_KONTACT_SUCCESS:
+    case GET_KONTACTS_SUCCESS:
       return { ...state, isGetting: false, kontacts: action.payload }
-    case GET_KONTACT_FAILURE: 
+    case GET_KONTACTS_FAILURE: 
       return { ...state, isGetting: false, errorMessage: action.payload }
     default: 
       return state 
   }
 }
 
-export default getKontactReducer
+export default getKontactsReducer
