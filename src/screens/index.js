@@ -1,7 +1,7 @@
-import ListScreen from './ListScreen'
+import KontactListScreen from './KontactListScreen'
 import KontactDetailScreen from './KontactDetailScreen'
 
 export {
-  ListScreen, 
+  KontactListScreen, 
   KontactDetailScreen
 }

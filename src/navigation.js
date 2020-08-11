@@ -1,15 +1,15 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { ListScreen, KontactDetailScreen } from './screens'
+import { KontactListScreen, KontactDetailScreen } from './screens'
 
 const Stack = createStackNavigator()
 
 const KontactStackScreens = () => (
   <Stack.Navigator>
     <Stack.Screen
-      name='List'
-      component={ListScreen}
+      name='KontactList'
+      component={KontactListScreen}
       options={{headerShown: false}}
     />
     <Stack.Screen 

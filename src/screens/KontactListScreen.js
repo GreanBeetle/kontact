@@ -2,7 +2,7 @@ import React from 'react'
 import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native'
 import { GLOBAL_STYLES as STYLES } from '../styles'
 
-const ListScreen = ({ navigation }) => {
+const KontactListScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={STYLES.container}>
       <View style={STYLES.standard}>
@@ -24,4 +24,4 @@ const ListScreen = ({ navigation }) => {
   )
 }
 
-export default ListScreen
+export default KontactListScreen
