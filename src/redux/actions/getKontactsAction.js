@@ -13,13 +13,8 @@ export const getKontacts = () => {
   return async dispatch => {
     dispatch(getKontactsRequest())
     try {
-      // const response = await fetch('​https://jsonplaceholder.typicode.com/users', { method: 'GET' })
-      console.log('about to fetch... the response should be next')
-      // const response = await fetch("​https://jsonplaceholder.typicode.com/users", { method: "GET"})
       const response = await fetch('https://jsonplaceholder.typicode.com/users')
-      console.log('response', response) // REMOVE
-      const json = response.json()
-      console.log('json', json) // REMOVE 
+      const json = await response.json()
       dispatch(getKontactsSuccess(json))
     } catch (error) {
       console.log('get kontacts error', error)
