@@ -13,7 +13,7 @@ export const getKontacts = () => {
   return async dispatch => {
     dispatch(getKontactsRequest())
     try {
-      const response = await fetch('​https://jsonplaceholder.typicode.com/users')
+      const response = await fetch('​https://jsonplaceholder.typicode.com/users', { method: 'GET' })
       console.log('response', response) // REMOVE
       const json = response.json()
       console.log('json', json) // REMOVE 
