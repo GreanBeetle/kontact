@@ -9,5 +9,19 @@ export const getKontactsSuccess = json => ({ type: GET_KONTACTS_SUCCESS, payload
 export const getKontactsFailure = errorMessage => ({ type: GET_KONTACTS_FAILURE, payload: errorMessage })
 
 export const getKontacts = () => {
-  console.log('get kontacts') // remove 
+  console.log('getting kontacts ...') 
+  return async dispatch => {
+    dispatch(getKontactsRequest())
+    try {
+      const response = await fetch('​https://jsonplaceholder.typicode.com/users')
+      console.log('response', response) // REMOVE
+      const json = response.json()
+      console.log('json', json) // REMOVE 
+      dispatch(getKontactsSuccess(json))
+    } catch (error) {
+      console.log('get kontacts error', error)
+      dispatch(getKontactsFailure(error.message))
+    }
+  }
 }
+
