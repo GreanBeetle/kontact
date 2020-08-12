@@ -42,6 +42,8 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
     </View>
   )
 
+  
+
   const kontactListView = (
     <FlatList 
       data={kontacts}

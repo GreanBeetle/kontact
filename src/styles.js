@@ -15,9 +15,13 @@ export const GLOBAL_STYLES = {
     alignItems: 'center', 
     justifyContent: 'center'
   },
+  smallText: {
+    fontFamily: FONTS.raleway,
+    fontSize: 12
+  },
   normalText: {
     fontFamily: FONTS.raleway,
-    fontSize: 20
+    fontSize: 16
   },
   subHeaderText: {
     fontFamily: FONTS.montserrat,
@@ -29,8 +33,25 @@ export const GLOBAL_STYLES = {
   },
   red: {
     color: COLORS.red
-  },  
-  // MOVE THESE TO COMPONENT STYLES? REMOVE ME!
+  }
+}
+
+// SCREEN STYLES ***************************************
+export const KONTACT_LIST_SCREEN_STYLES = {}
+
+export const KONTACT_DETAIL_SCREEN_STYLES = {}
+
+// COMPONENT STYLES ************************************
+export const KONTACT_LIST_ITEM_STYLES = {
+  item: {
+    padding: 20,
+    marginVertical: 8,
+    width: deviceWindowWidth() - 40,
+    backgroundColor: COLORS.actionGreen
+  }
+}
+
+export const BUTTON_STYLES = {
   button: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -39,15 +60,8 @@ export const GLOBAL_STYLES = {
     width: deviceWindowWidth() - 72, // 48 if using height 42, radius 24 
     marginVertical: 12
   },
-  buttonText: { // REMOVE THIS 
+  buttonText: {  
     fontSize: 16,
     fontFamily: FONTS.raleway
   }
 }
-
-// SCREEN STYLES ***************************************
-export const KONTACT_LIST_SCREEN_STYLES = {
-  // styles here  
-}
-
-// COMPONENT STYLES ************************************
