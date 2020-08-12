@@ -1,5 +1,6 @@
 import { deviceWindowWidth } from './utilities'
 import COLORS from './assets/colors'
+import FONTS from './fonts'
 
 export const GLOBAL_STYLES = {
   container: {
@@ -14,7 +15,14 @@ export const GLOBAL_STYLES = {
     alignItems: 'center', 
     justifyContent: 'center'
   },
-
+  normalText: {
+    fontFamily: FONTS.raleway,
+    fontSize: 16
+  },
+  headerText: {
+    fontFamily: FONTS.montserrat,
+    fontSize: 24
+  }, 
   // MOVE THESE TO COMPONENT STYLES? REMOVE ME!
   button: {
     justifyContent: 'center',
@@ -24,14 +32,8 @@ export const GLOBAL_STYLES = {
     width: deviceWindowWidth() - 72, // 48 if using height 42, radius 24 
     marginVertical: 12
   },
-  buttonText: {
+  buttonText: { // REMOVE THIS 
     fontSize: 16,
-    // fontFamily: FONTS.lexend
+    fontFamily: FONTS.raleway
   }
-
 }
-
-/*****************************************************  
-COMPONENT STYLES
-*****************************************************/
-

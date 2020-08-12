@@ -16,11 +16,11 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
   }, [])
 
   let content = (
-      <Text style={{
-        fontSize: 24,
-        fontFamily: FONTS.montserrat}}>
-          HEADER
-      </Text>
+    <Text style={{
+      fontSize: 24,
+      fontFamily: FONTS.montserrat}}>
+        HEADER
+    </Text>
   )
   
   return (

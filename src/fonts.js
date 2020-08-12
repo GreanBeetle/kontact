@@ -1,6 +1,6 @@
 const FONTS = {
-  montserrat: "Montserrat-Regular",
-  raleway: "Raleway-Regular"
+  montserrat: 'Montserrat-Regular',
+  raleway: 'Raleway-Regular'
 }
 
 export default FONTS
