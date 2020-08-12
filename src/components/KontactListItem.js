@@ -6,7 +6,7 @@ import {
 } from '../styles'
 
 const KontactListItem = ({ item }) => {
-  console.log('item', item)
+  console.log('item', item) // REMOVE
   return (
     <Pressable style={styles.item} onPress={() => console.log(`item id is ${item.id}`)}>
       <View>
