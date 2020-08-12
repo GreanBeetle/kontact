@@ -1,13 +1,19 @@
 import React, { useEffect } from 'react'
-import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native'
+import { 
+  SafeAreaView, 
+  View, 
+  Text, 
+  TouchableOpacity, 
+  FlatList 
+} from 'react-native'
 import { 
   GLOBAL_STYLES as STYLES,
-  KONTACT_LIST_SCREEN_STYLES as styles 
+  KONTACT_LIST_SCREEN_STYLES as styles // KEEP or REMOVE? 
 } from '../styles'
 import { connect } from 'react-redux'
 import { getKontacts } from '../redux/actions'
-import FONTS from '../fonts'
 import { kontactListScreenCopy as COPY } from '../copy'
+import { KontactListItem } from '../components'
 
 const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getKontacts }) => {
 
@@ -19,23 +25,10 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
     getKontacts() 
   }, [])
 
-  let content = (
-    <Text style={{
-      fontSize: 24,
-      fontFamily: FONTS.montserrat}}>
-        HEADER
-    </Text>
-  )
+  let content
 
-  const defaultView = (
-    <Text style={{
-      fontSize: 24,
-      fontFamily: FONTS.montserrat
-    }}>
-      HEADER
-    </Text>
-  )
-
+  const defaultView = <Text style={STYLES.subHeaderText}>example default text</Text>
+  
   const isGettingView = <Text style={STYLES.normalText}>{COPY.isGettingView}</Text>
   
   const errorView = ( 
@@ -48,31 +41,25 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
       </View>
     </View>
   )
-   
-  
 
-  
-  // if (errorMessage) show errorView with retry button and don't retry
-  // if (isGetting = true and !errorMessage) show "retrieving kontacts"
-  // if (kontacts.length > 0 && !errorMessage && !isGetting) show kontactListView
-  // else show defaultLogoView with retrieve contacts button 
-  
+  const kontactListView = (
+    <FlatList 
+      data={kontacts}
+      keyExtractor={item => item.id.toString()}
+      renderItem={KontactListItem}
+    />
+  )
+   
+  if (errorMessage) content = errorView
+  else if (isGetting && !errorMessage) content = isGettingView
+  else if (!isGetting && !errorMessage && kontacts.length > 0) content = kontactListView
+  else content = defaultView 
+  /* <TouchableOpacity onPress={() => navigation.push('Kontact')} style={STYLES.standard}> */
   return (
     <SafeAreaView style={STYLES.container}>
       <View style={STYLES.standard}>
         {content}
-        {isGettingView}
-        {errorView}
       </View>
-
-      {/* TEMPORARY BUTTON CODE */}
-      <TouchableOpacity onPress={() => navigation.push('Kontact')} style={STYLES.standard}>
-        <View style={STYLES.button}>
-          <Text style={STYLES.buttonText}>GO</Text>
-        </View>
-      </TouchableOpacity>
-      {/* TEMPORARY BUTTON CODE */}
-
     </SafeAreaView>
   )
 }

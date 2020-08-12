@@ -45,6 +45,9 @@ export const GLOBAL_STYLES = {
   }
 }
 
+// SCREEN STYLES ***************************************
 export const KONTACT_LIST_SCREEN_STYLES = {
-  
+  // styles here  
 }
+
+// COMPONENT STYLES ************************************
