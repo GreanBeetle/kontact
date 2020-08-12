@@ -10,6 +10,13 @@ const initialState = {
   kontacts: []
 }
 
+/**
+ * sets the initial data store values for isGetting, errorMessage, and kontacts.
+ * updates these values in the data store after they change in response to the actions
+ * in getKontactsActions 
+ * @param {object} state 
+ * @param {string} action 
+ */
 const getKontactsReducer = (state = initialState, action) => {
   switch(action.type) {
     case GET_KONTACTS_REQUEST:

@@ -5,12 +5,12 @@ import { connect } from 'react-redux'
 import { getKontacts } from '../redux/actions'
 
 const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getKontacts }) => {
-  console.log('isGetting', isGetting) // REMOVE
-  console.log('errorMessage', errorMessage) // REMOVE
-  console.log('kontacts', kontacts) // REMOVE 
 
+  /**
+   * useEffect hook that functions like componentDidMount
+   * here we use it to dispatch the getKontacts() API call 
+   */
   useEffect(() => {
-    console.log('component did mount')
     getKontacts() 
   }, [])
   
