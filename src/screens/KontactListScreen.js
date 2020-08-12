@@ -3,6 +3,7 @@ import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native'
 import { GLOBAL_STYLES as STYLES } from '../styles'
 import { connect } from 'react-redux'
 import { getKontacts } from '../redux/actions'
+import FONTS from '../fonts'
 
 const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getKontacts }) => {
 
@@ -15,18 +16,17 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
   }, [])
 
   let content = (
-    <View>
-      <Text></Text>
-    </View>
+      <Text style={{
+        fontSize: 24,
+        fontFamily: FONTS.montserrat}}>
+          HEADER
+      </Text>
   )
   
   return (
     <SafeAreaView style={STYLES.container}>
       <View style={STYLES.standard}>
-        <Text>
-          List Screen 
-          {/* CHANGE THIS TEXT! */}
-        </Text>
+        {content}
       </View>
 
       {/* TEMPORARY BUTTON CODE */}
