@@ -6,4 +6,3 @@ export default combineReducers({
   getKontacts: getKontactsReducer,
   setKontact: setSelectedKontactReducer 
 })
-
