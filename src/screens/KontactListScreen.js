@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native'
-import { GLOBAL_STYLES as STYLES } from '../styles'
+import { 
+  GLOBAL_STYLES as STYLES,
+  KONTACT_LIST_SCREEN_STYLES as styles 
+} from '../styles'
 import { connect } from 'react-redux'
 import { getKontacts } from '../redux/actions'
 import FONTS from '../fonts'
@@ -24,8 +27,28 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
     </Text>
   )
 
+  const defaultView = (
+    <Text style={{
+      fontSize: 24,
+      fontFamily: FONTS.montserrat
+    }}>
+      HEADER
+    </Text>
+  )
+
   const isGettingView = <Text style={STYLES.normalText}>{COPY.isGettingView}</Text>
-    
+  
+  const errorView = ( 
+    <View>
+      <View>
+        <Text style={[STYLES.subHeaderText, STYLES.red]}>{COPY.errorViewHeader}</Text>
+      </View>
+      <View>
+        <Text style={STYLES.normalText}>{errorMessage}</Text>
+      </View>
+    </View>
+  )
+   
   
 
   
@@ -39,6 +62,7 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
       <View style={STYLES.standard}>
         {content}
         {isGettingView}
+        {errorView}
       </View>
 
       {/* TEMPORARY BUTTON CODE */}

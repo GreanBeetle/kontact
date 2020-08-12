@@ -19,10 +19,17 @@ export const GLOBAL_STYLES = {
     fontFamily: FONTS.raleway,
     fontSize: 20
   },
-  headerText: {
+  subHeaderText: {
     fontFamily: FONTS.montserrat,
     fontSize: 24
-  }, 
+  },
+  headerText: {
+    fontFamily: FONTS.montserrat,
+    fontSize: 36
+  },
+  red: {
+    color: COLORS.red
+  },  
   // MOVE THESE TO COMPONENT STYLES? REMOVE ME!
   button: {
     justifyContent: 'center',
@@ -39,5 +46,5 @@ export const GLOBAL_STYLES = {
 }
 
 export const KONTACT_LIST_SCREEN_STYLES = {
-
+  
 }
