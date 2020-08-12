@@ -17,7 +17,7 @@ export const GLOBAL_STYLES = {
   },
   normalText: {
     fontFamily: FONTS.raleway,
-    fontSize: 16
+    fontSize: 20
   },
   headerText: {
     fontFamily: FONTS.montserrat,
@@ -36,4 +36,8 @@ export const GLOBAL_STYLES = {
     fontSize: 16,
     fontFamily: FONTS.raleway
   }
+}
+
+export const KONTACT_LIST_SCREEN_STYLES = {
+
 }
