@@ -12,8 +12,8 @@ const initialState = {
 
 /**
  * sets the initial data store values for isGetting, errorMessage, and kontacts.
- * updates these values in the data store after they change in response to the actions
- * in getKontactsActions 
+ * updates these values in the data store after they change in response to
+ * actions in getKontactsActions 
  * @param {object} state 
  * @param {string} action 
  */

@@ -13,6 +13,12 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
   useEffect(() => {
     getKontacts() 
   }, [])
+
+  let content = (
+    <View>
+      <Text></Text>
+    </View>
+  )
   
   return (
     <SafeAreaView style={STYLES.container}>
