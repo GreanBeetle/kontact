@@ -5,10 +5,9 @@ import {
   KONTACT_LIST_ITEM_STYLES as styles
 } from '../styles'
 
-const KontactListItem = ({ item }) => {
-  console.log('item', item) // REMOVE
+const KontactListItem = ({ item, onPress }) => {
   return (
-    <Pressable style={styles.item} onPress={() => console.log(`item id is ${item.id}`)}>
+    <Pressable style={styles.item} onPress={ item => onPress(item)}>
       <View>
         <Text style={STYLES.normalText}>{item.name}</Text>
         <Text style={STYLES.smallText}>{item.email}</Text>

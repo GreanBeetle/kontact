@@ -11,7 +11,7 @@ const initialSelectedKontactState = {
  * set initial data store values for selectedKontact
  * update that value when a setSelectedKontactAction has been dispatched 
  * @param {object} state
- * @param {string} actopm
+ * @param {string} action
  */
 export default (state = initialSelectedKontactState, action) => {
   switch (action.type) {

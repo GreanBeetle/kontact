@@ -3,19 +3,15 @@ import {
   SafeAreaView, 
   View, 
   Text, 
-  TouchableOpacity, 
   FlatList 
 } from 'react-native'
-import { 
-  GLOBAL_STYLES as STYLES,
-  KONTACT_LIST_SCREEN_STYLES as styles // KEEP or REMOVE? 
-} from '../styles'
+import { GLOBAL_STYLES as STYLES } from '../styles'
 import { connect } from 'react-redux'
-import { getKontacts } from '../redux/actions'
+import { getKontacts, setSelectedKontact } from '../redux/actions'
 import { kontactListScreenCopy as COPY } from '../copy'
 import { KontactListItem } from '../components'
 
-const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getKontacts }) => {
+const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getKontacts, setSelectedKontact }) => {
 
   /**
    * useEffect hook that functions like componentDidMount
@@ -24,6 +20,16 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
   useEffect(() => {
     getKontacts() 
   }, [])
+
+  const navigateToKontactDetail = async kontact => {
+    try {
+      console.log('attempting to navigate to kontact detail')
+      await setSelectedKontact(kontact)
+      navigation.push('Kontact')
+    } catch (error) {
+      console.log('navigate to kontact detail error', error)
+    }
+  }
 
   let content
 
@@ -41,14 +47,12 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
       </View>
     </View>
   )
-
   
-
   const kontactListView = (
     <FlatList 
       data={kontacts}
       keyExtractor={item => item.id.toString()}
-      renderItem={KontactListItem}
+      renderItem={({ item }) => <KontactListItem item={item} onPress={navigateToKontactDetail}/> }
     />
   )
    
@@ -67,8 +71,8 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
 }
 
 function mapStateToProps(state) {
-  const { isGetting, errorMessage, kontacts } = state.getKontacts 
+  const { isGetting, errorMessage, kontacts } = state.getKontacts
   return { isGetting, errorMessage, kontacts }
 }
 
-export default connect(mapStateToProps, { getKontacts })(KontactListScreen)
+export default connect(mapStateToProps, { getKontacts, setSelectedKontact })(KontactListScreen)
