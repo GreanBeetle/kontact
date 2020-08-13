@@ -8,6 +8,7 @@ import {
  * @param {object} kontact 
  */
 export const setSelectedKontact = kontact => {
+  console.log('ACTIONS kontact', kontact) // REMOVE
   if (kontact) return { type: SET_SELECTED_KONTACT, payload: kontact }
   else return { type: SET_SELECTED_KONTACT_TO_NULL }
 }

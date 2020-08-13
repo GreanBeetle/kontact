@@ -14,6 +14,8 @@ const initialSelectedKontactState = {
  * @param {string} action
  */
 export default (state = initialSelectedKontactState, action) => {
+  console.log('REDUCER action', action) // REMOVE
+  console.log('REDUCER state', state) // REMOVE
   switch (action.type) {
     case SET_SELECTED_KONTACT:
       return { ...state, selectedKontact: action.payload }

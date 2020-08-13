@@ -24,7 +24,6 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
   /**
    * invokes setSelectedKontact action to set selected kontact in data store
    * navigates to KontactDetailScreen
-   * NOTE * I DO NOT THINK THIS METHOD NEEDS TO BE ASYNCHRONOUS! 
    * @param {object} kontact 
    */
   const navigateToKontactDetail = async kontact => {
@@ -32,7 +31,7 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
       await setSelectedKontact(kontact)
       navigation.push('Kontact')
     } catch (error) {
-      console.log('navigate to kontact detail error', error)
+      console.log('navigate to kontact detail error', error) // FIX 
     }
   }
 
@@ -42,7 +41,7 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
   
   const isGettingView = <Text style={STYLES.normalText}>{COPY.isGettingView}</Text>
   
-  const errorView = ( 
+  const errorView = ( // CLEAN UP THIS CLUMSY JSX
     <View>
       <View>
         <Text style={[STYLES.subHeaderText, STYLES.red]}>{COPY.errorViewHeader}</Text>
@@ -57,7 +56,7 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
     <FlatList 
       data={kontacts}
       keyExtractor={item => item.id.toString()}
-      renderItem={({ item }) => <KontactListItem item={item} onPress={navigateToKontactDetail}/> }
+      renderItem={({ item }) => <KontactListItem item={item} onPress={ () => navigateToKontactDetail(item)}/> }
     />
   )
    
@@ -65,7 +64,6 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
   else if (isGetting && !errorMessage) content = isGettingView
   else if (!isGetting && !errorMessage && kontacts.length > 0) content = kontactListView
   else content = defaultView 
-  /* <TouchableOpacity onPress={() => navigation.push('Kontact')} style={STYLES.standard}> */
   return (
     <SafeAreaView style={STYLES.container}>
       <View style={STYLES.standard}>
