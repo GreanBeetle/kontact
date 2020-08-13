@@ -21,9 +21,14 @@ const KontactListScreen = ({ navigation, isGetting, errorMessage, kontacts, getK
     getKontacts() 
   }, [])
 
+  /**
+   * invokes setSelectedKontact action to set selected kontact in data store
+   * navigates to KontactDetailScreen
+   * NOTE * I DO NOT THINK THIS METHOD NEEDS TO BE ASYNCHRONOUS! 
+   * @param {object} kontact 
+   */
   const navigateToKontactDetail = async kontact => {
     try {
-      console.log('attempting to navigate to kontact detail')
       await setSelectedKontact(kontact)
       navigation.push('Kontact')
     } catch (error) {
